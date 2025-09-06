@@ -1,69 +1,60 @@
-# React + TypeScript + Vite
+# Aria Moonlight Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A stunning, modern portfolio website for digital artist and content creator Aria. This interactive web experience showcases creative work, connects with audiences, and provides an immersive journey through Aria's digital world.
 
-Currently, two official plugins are available:
+## ✨ What This Website Is
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This is a personal portfolio and content showcase for **Aria**, a creative digital artist and content creator with:
+- 50K+ followers across platforms
+- 1M+ content likes and engagement
+- Daily fresh creative content
+- A passion for extraordinary digital experiences
 
-## Expanding the ESLint configuration
+## 🎨 Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Interactive Hero Section** - Dynamic introduction with floating animations
+- **Content Gallery** - Showcase of creative work and digital art
+- **Experience Timeline** - Professional journey and achievements  
+- **About Page** - Personal story and creative philosophy
+- **Connect Hub** - Social links and collaboration opportunities
+- **Modern UI/UX** - Smooth animations, gradient designs, and responsive layout
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🚀 Tech Stack
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+Built with modern web technologies for optimal performance:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- **React 19** + **TypeScript** - Component-based architecture
+- **Vite** - Lightning-fast development and build tools
+- **Framer Motion** - Smooth animations and transitions
+- **React Three Fiber** - 3D graphics and interactive elements
+- **Tailwind CSS** - Utility-first styling framework
+- **React Router** - Client-side navigation
+
+## 🛠️ Development
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🎯 Project Structure
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- `/src/components` - Reusable UI components and sections
+- `/src/pages` - Main application pages (Home, About, Gallery, etc.)
+- `/src/layouts` - Page layout wrappers
+- `/src/hooks` - Custom React hooks for functionality
+- `/src/utils` - Helper functions and constants
+- `/src/styles` - Animation definitions and styling
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+*A creative digital portfolio that brings imagination to life through code.* ✨
