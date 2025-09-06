@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&family=Dancing+Script:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bright-purple: #8B5CF6;
+  --color-vibrant-pink: #F472B6;
+  --color-electric-blue: #3B82F6;
+  --color-sunny-yellow: #FBBF24;
+  --color-soft-white: #FFFFFF;
+  --color-light-gray: #F3F4F6;
+  --color-warm-gray: #6B7280;
+  
+  /* Bright gradient */
+  --bright-gradient: linear-gradient(45deg, 
+    var(--color-vibrant-pink), 
+    var(--color-electric-blue), 
+    var(--color-sunny-yellow), 
+    var(--color-bright-purple)
+  );
+  
+  /* Simple gradient */
+  --simple-gradient: linear-gradient(135deg,
+    var(--color-bright-purple) 0%,
+    var(--color-vibrant-pink) 50%,
+    var(--color-electric-blue) 100%
+  );
+  
+  /* Glass morphism - brighter */
+  --glass-bg: rgba(255, 255, 255, 0.2);
+  --glass-border: rgba(255, 255, 255, 0.3);
+  --glass-shadow: 0 4px 24px rgba(139, 92, 246, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #F8F9FA 0%, #E9ECEF 100%);
+  color: var(--color-warm-gray);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-light-gray);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-bright-purple);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-vibrant-pink);
+}
+
+/* Glass morphism utility class */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+/* Holographic text effect */
+.holographic-text {
+  background: var(--holographic-gradient);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: holographic 3s ease-in-out infinite;
+}
+
+/* Glitch effect */
+.glitch {
+  position: relative;
+  color: var(--color-soft-pearl);
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch::before {
+  animation: glitch-1 0.5s infinite;
+  color: var(--color-electric-coral);
+  z-index: -1;
+}
+
+.glitch::after {
+  animation: glitch-2 0.5s infinite;
+  color: var(--color-holographic-blue);
+  z-index: -2;
+}
+
+@keyframes glitch-1 {
+  0%, 14%, 15%, 49%, 50%, 99%, 100% {
+    transform: translate(0, 0) skew(0deg);
+  }
+  1%, 13% {
+    transform: translate(-2px, -1px) skew(-1deg);
+  }
+  16%, 48% {
+    transform: translate(1px, -1px) skew(1deg);
+  }
+  51%, 98% {
+    transform: translate(-1px, 2px) skew(-1deg);
+  }
+}
+
+@keyframes glitch-2 {
+  0%, 20%, 21%, 60%, 61%, 100% {
+    transform: translate(0, 0) skew(0deg);
+  }
+  1%, 19% {
+    transform: translate(1px, 1px) skew(1deg);
+  }
+  22%, 59% {
+    transform: translate(-1px, -2px) skew(-1deg);
+  }
+  62%, 99% {
+    transform: translate(2px, 1px) skew(1deg);
+  }
+}
+
+/* Neon glow */
+.neon-glow {
+  text-shadow: 
+    0 0 5px var(--color-electric-coral),
+    0 0 10px var(--color-electric-coral),
+    0 0 15px var(--color-electric-coral),
+    0 0 20px var(--color-electric-coral);
+}
+
+/* Liquid metal button */
+.liquid-metal {
+  background: linear-gradient(45deg, #2a2a2a, #3a3a3a);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.liquid-metal::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  background: var(--holographic-gradient);
+  border-radius: inherit;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+}
+
+.liquid-metal:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(74, 14, 78, 0.3);
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg); 
+  }
+  33% { 
+    transform: translateY(-10px) rotate(-2deg); 
+  }
+  66% { 
+    transform: translateY(5px) rotate(2deg); 
+  }
+}
+
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Shimmer effect */
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Aurora background */
+.aurora-bg {
+  background: var(--aurora-gradient);
+  background-size: 400% 400%;
+  animation: aurora-move 20s ease-in-out infinite;
+}
+
+@keyframes aurora-move {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Magnetic hover effect */
+.magnetic {
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Hide default focus outlines and add custom ones */
+button:focus,
+a:focus,
+input:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-bright-purple);
+}
+
+/* Selection colors */
+::selection {
+  background: var(--color-vibrant-pink);
+  color: white;
+}
+
+::-moz-selection {
+  background: var(--color-vibrant-pink);
+  color: white;
+}
+
+/* Custom animations and effects */
+
+/* Burst animation for interactive elements */
+@keyframes burst {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(3);
+    opacity: 0;
+  }
+}
+
+/* Hexagon clip-path */
+.hexagon {
+  clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%);
+}
+
+/* 3D perspective utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
